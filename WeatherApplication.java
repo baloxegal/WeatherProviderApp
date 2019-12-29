@@ -29,8 +29,7 @@ public class WeatherApplication {
 		System.out.println();
 		System.out.printf("MAX: %9.1f C\n", WeatherProvider.getMaxTemperatureFor10Days());
 		System.out.printf("AVG: %9.1f C\n", WeatherProvider.calculateAvgFor10Days());
-		System.out.printf("MIN: %9.1f C\n", WeatherProvider.getMinTemperatureFor10Days());
-		System.out.println();
+		System.out.printf("MIN: %9.1f C\n\n", WeatherProvider.getMinTemperatureFor10Days());
 		for(int i = 0; i < 35; i++) {
 	    	   System.out.print("#");
 	    }

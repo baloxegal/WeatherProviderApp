@@ -1,6 +1,6 @@
 import java.util.Random;
-import java.math.BigDecimal; // Р’Р°СЂРёР°РЅС‚ РѕРєСЂСѓРіР»РµРЅРёСЏ N 2
-import java.math.RoundingMode; // Р’Р°СЂРёР°РЅС‚ РѕРєСЂСѓРіР»РµРЅРёСЏ N 2
+import java.math.BigDecimal; // Вариант округления N 2
+import java.math.RoundingMode; // Вариант округления N 2
 
 
 public class WeatherProvider {
@@ -10,12 +10,11 @@ public class WeatherProvider {
 
     private static double generateTemperature() {
         Random rd = new Random(); 
-        double temperature = 300 * (rd.nextDouble() - 0.5);// Р‘РµР· РѕРєСЂСѓРіР»РµРЅРёСЏ Рё Р’Р°СЂРёР°РЅС‚ РѕРєСЂСѓРіР»РµРЅРёСЏ N 2
-        //double temperature = (double)((int) (300 * (rd.nextDouble() - 0.5) * 10)) / 10; // Р’Р°СЂРёР°РЅС‚ РѕРєСЂСѓРіР»РµРЅРёСЏ N 1
-        double roundTemperature = new BigDecimal(temperature).setScale(1, RoundingMode.UP).doubleValue(); // Р’Р°СЂРёР°РЅС‚ РѕРєСЂСѓРіР»РµРЅРёСЏ N 2
-        return roundTemperature; // Р’Р°СЂРёР°РЅС‚ РѕРєСЂСѓРіР»РµРЅРёСЏ N 2
-        
-        //return temperature; // Р‘РµР· РѕРєСЂСѓРіР»РµРЅРёСЏ Рё Р’Р°СЂРёР°РЅС‚ РѕРєСЂСѓРіР»РµРЅРёСЏ N 1
+        double temperature = 300 * (rd.nextDouble() - 0.5);// Без округления и Вариант округления N 2
+        //double temperature = (double)((int) (300 * (rd.nextDouble() - 0.5) * 10)) / 10; // Вариант округления N 1
+        double roundTemperature = new BigDecimal(temperature).setScale(1, RoundingMode.UP).doubleValue(); // Вариант округления N 2
+        return roundTemperature; // Вариант округления N 2
+        //return temperature; // Без округления и Вариант округления N 1
     }
 
     private static double[] generateTemperaturesForecastFor10Days() {
